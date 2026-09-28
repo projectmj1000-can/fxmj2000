@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="FX 민준 2000">
+  <!-- FX 민준 2000 심볼: MJ 모노그램. M 의 오른쪽 기둥이 J 로 내려오고, 가운데 획이 상승 화살표로 뻗는다 -->
+  <defs>
+    <linearGradient id="fxmj-gold" gradientUnits="userSpaceOnUse" x1="12" y1="54" x2="54" y2="10">
+      <stop offset="0" stop-color="#9C6E1E"/><stop offset=".45" stop-color="#DDB463"/><stop offset=".8" stop-color="#F6DC9A"/><stop offset="1" stop-color="#FFF4D6"/>
+    </linearGradient>
+    <linearGradient id="fxmj-navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#162A44"/><stop offset="1" stop-color="#09101B"/>
+    </linearGradient>
+    <radialGradient id="fxmj-glow" cx=".78" cy=".2" r=".55">
+      <stop offset="0" stop-color="#F6DC9A" stop-opacity=".2"/><stop offset="1" stop-color="#F6DC9A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#fxmj-navy)"/>
+    <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#fxmj-glow)"/>
+    <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="14.25" fill="none" stroke="url(#fxmj-gold)" stroke-opacity=".7" stroke-width="1.5"/>
+    <g fill="none" stroke="url(#fxmj-gold)" stroke-width="5.4" stroke-linejoin="miter" stroke-linecap="butt">
+      <polyline points="13.9,51.6 13.9,17.5 28.8,35.6 48,16.4"/>
+      <path d="M40.5 23.9 V44.2 A7.5 7.5 0 0 1 33 51.7 H27.7"/>
+    </g>
+    <polygon points="54.4,10 42.7,13.8 50.7,21.8" fill="#FFF4D6"/>
+</svg>

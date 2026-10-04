@@ -1,6 +1,6 @@
-# FX 민준 2000
+# MINJUN 2000 CAPITAL
 
-자체 개발 FX 자동매매 시스템 소개 페이지입니다.
+자체 개발 시스템 트레이딩 (FX · 코인 · ETF) 소개 페이지입니다.
 
 https://projectmj1000-can.github.io/fxmj2000/
 

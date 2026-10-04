@@ -1,22 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="FX 민준 2000">
-  <!-- FX 민준 2000 심볼: MJ 모노그램. M 의 오른쪽 기둥이 J 로 내려오고, 가운데 획이 상승 화살표로 뻗는다 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="MINJUN 2000 CAPITAL">
+  <!-- MINJUN 2000 CAPITAL 인장 심볼 (2026-10-03, FX · 코인 · ETF 통합): 원형 인장, 바깥 금테는 세 조각 = FX · CRYPTO · ETF,
+       가운데 MJ 모노그램 — M 의 획이 45° 상승 화살표로 뻗고 그 화살표에서 J 가 내려온다 (세 시장을 하나로 끌어올림).
+       모든 획은 같은 굵기, 오닉스 바탕 + 샴페인 골드 + 오른쪽 위에서 비추는 은은한 빛 -->
   <defs>
-    <linearGradient id="fxmj-gold" gradientUnits="userSpaceOnUse" x1="12" y1="54" x2="54" y2="10">
-      <stop offset="0" stop-color="#9C6E1E"/><stop offset=".45" stop-color="#DDB463"/><stop offset=".8" stop-color="#F6DC9A"/><stop offset="1" stop-color="#FFF4D6"/>
+    <linearGradient id="mj-gold" gradientUnits="userSpaceOnUse" x1="12" y1="54" x2="52" y2="12">
+      <stop offset="0" stop-color="#8A6828"/><stop offset=".32" stop-color="#C29B48"/><stop offset=".66" stop-color="#E6CB86"/>
+      <stop offset="1" stop-color="#FBF0CF"/>
     </linearGradient>
-    <linearGradient id="fxmj-navy" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#162A44"/><stop offset="1" stop-color="#09101B"/>
+    <linearGradient id="mj-ring" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="64" y2="0">
+      <stop offset="0" stop-color="#7A5A24"/><stop offset=".5" stop-color="#C9A24D"/><stop offset=".8" stop-color="#EDD595"/><stop offset="1" stop-color="#A9853C"/>
     </linearGradient>
-    <radialGradient id="fxmj-glow" cx=".78" cy=".2" r=".55">
-      <stop offset="0" stop-color="#F6DC9A" stop-opacity=".2"/><stop offset="1" stop-color="#F6DC9A" stop-opacity="0"/>
+    <radialGradient id="mj-onyx" cx=".5" cy=".42" r=".62">
+      <stop offset="0" stop-color="#1B1C21"/><stop offset="1" stop-color="#08090B"/>
+    </radialGradient>
+    <radialGradient id="mj-light" cx=".8" cy=".12" r=".75">
+      <stop offset="0" stop-color="#F6E3AE" stop-opacity=".13"/><stop offset="1" stop-color="#F6E3AE" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#fxmj-navy)"/>
-    <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#fxmj-glow)"/>
-    <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="14.25" fill="none" stroke="url(#fxmj-gold)" stroke-opacity=".7" stroke-width="1.5"/>
-    <g fill="none" stroke="url(#fxmj-gold)" stroke-width="5.4" stroke-linejoin="miter" stroke-linecap="butt">
-      <polyline points="13.9,51.6 13.9,17.5 28.8,35.6 48,16.4"/>
-      <path d="M40.5 23.9 V44.2 A7.5 7.5 0 0 1 33 51.7 H27.7"/>
-    </g>
-    <polygon points="54.4,10 42.7,13.8 50.7,21.8" fill="#FFF4D6"/>
+  <circle cx="32" cy="32" r="31.4" fill="url(#mj-onyx)"/>
+  <circle cx="32" cy="32" r="31.4" fill="url(#mj-light)"/>
+  <path d="M35.05 2.96 A29.2 29.2 0 0 1 58.68 43.88 M55.62 49.16 A29.2 29.2 0 0 1 8.38 49.16 M5.32 43.88 A29.2 29.2 0 0 1 28.95 2.96"
+        fill="none" stroke="url(#mj-ring)" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="url(#mj-ring)" stroke-opacity=".32" stroke-width=".6"/>
+  <g transform="translate(10.2 10.4) scale(.68)" fill="none" stroke="url(#mj-gold)" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8" stroke-linecap="butt">
+    <polyline points="15,50 15,19.5 29,35.5 47,17.5"/>
+    <polyline points="38.6,17.5 47,17.5 47,25.9"/>
+    <path d="M40.2 24.3 V43 A7 7 0 0 1 33.2 50 H27.5"/>
+  </g>
 </svg>

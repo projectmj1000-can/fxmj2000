@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="외환 · 코인 · ETF 시장을 미리 정하고 검증한 규칙대로만 매매하는 자체 개발 시스템 트레이딩. 운용 목표 2,000억 원.">
-<meta property="og:title" content="MINJUN 2000 CAPITAL">
-<meta property="og:description" content="자체 개발 시스템 트레이딩 · FX · CRYPTO · ETF · 운용 목표 2,000억 원">
+<meta name="description" content="외환 · 코인 시장을 미리 정하고 검증한 규칙대로만 매매하는 자체 개발 시스템 트레이딩, PARK INVESTMENT.">
+<meta property="og:title" content="PARK INVESTMENT">
+<meta property="og:description" content="자체 개발 시스템 트레이딩 · FX · CRYPTO · 데모·모의 계좌로 실전 검증 중">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#05070C">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>MINJUN 2000 CAPITAL</title>
+<title>PARK INVESTMENT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Cinzel:wght@500;600&family=Pinyon+Script&family=Song+Myung&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Cinzel:wght@500;600&display=swap">
 <style>
-  /* MINJUN 2000 CAPITAL 공개 소개 페이지 (2026-10-04 개정: FX · 코인 · ETF 통합, 일출 직전 하늘, 인장 심볼).
-     계좌 번호·잔고·수익 숫자는 싣지 않는다. 브랜드 그대로 한 가지 어두운 모습 (밝은 테마 없음) */
+  /* PARK INVESTMENT 공개 소개 페이지 (2026-10-11 개정: 이름 PARK INVESTMENT · 서명 P 인장 · 실사 사진 7장 머리말).
+     계좌 번호·잔고·금액은 싣지 않는다 (운용 현황 페이지도 % 와 R 만). 브랜드 그대로 한 가지 어두운 모습 (오닉스 + 샴페인 골드) */
   :root {
     color-scheme: dark;
     --bg: #05070C;
@@ -26,13 +26,14 @@
     --muted: #93A2B5;
     --dim: #62728A;
     --gold: #DDB463;
-    --gold-deep: #9C6E1E;
     --champagne: #FFF4D6;
     --up: #2BC48F;
     --sans: "IBM Plex Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
     --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    --cinzel: "Cinzel", "Trajan Pro", "Times New Roman", serif;
   }
   * { box-sizing: border-box; }
+  html, body { margin: 0; }
   body { background: var(--bg); color: var(--text); font: 16px/1.7 var(--sans); padding-inline: 16px; padding-block: 0 56px; word-break: keep-all; overflow-x: hidden; }
   .wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 88px; }
   h2 { font-size: clamp(24px, 3.2vw, 32px); line-height: 1.3; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
@@ -42,72 +43,59 @@
   .sec-head { display: grid; gap: 10px; }
   .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 
-  /* ---------- 히어로: 일출 직전의 밤하늘과 지평선 ---------- */
-  .hero { --hz: 74%; position: relative; isolation: isolate; display: grid; justify-items: center; text-align: center; gap: 20px;
-    width: 100vw; margin-left: calc(50% - 50vw); padding: 84px 16px 0; overflow: hidden;  /* 화면 전체 폭 (가운데 칸에서 끊기지 않게) */
-    background:
-      radial-gradient(140% 60% at 50% var(--hz), rgba(70,95,170,.22), transparent 70%),
-      linear-gradient(180deg, #03050A 0%, #050810 30%, #09101F 55%, #111A30 66%, #1B2236 calc(var(--hz) - 2%), #2A2534 var(--hz), #05070B calc(var(--hz) + .3%), var(--bg) 100%); }
-  .hero .dawn { position: absolute; z-index: -1; left: -10%; right: -10%; top: 0; height: var(--hz); pointer-events: none;
-    background:
-      radial-gradient(34% 30% at 50% 100%, rgba(255,214,160,.30), transparent 72%),
-      radial-gradient(64% 42% at 50% 100%, rgba(232,150,120,.15), transparent 72%),
-      radial-gradient(110% 56% at 50% 100%, rgba(120,110,190,.12), transparent 75%);
-    animation: dawnRise 14s ease-in-out infinite; }
-  @keyframes dawnRise { 0%, 100% { opacity: .65; transform: translateY(4px); } 50% { opacity: 1; transform: none; } }
-  .hero::before { content: ""; position: absolute; z-index: -2; inset: 0 0 calc(100% - var(--hz)) 0; pointer-events: none; opacity: .55;
-    background-image:
-      radial-gradient(1px 1px at 7% 14%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 16% 38%, #cfd8ff 50%, transparent 51%),
-      radial-gradient(1.3px 1.3px at 27% 9%, #fff 50%, transparent 51%), radial-gradient(1px 1px at 38% 26%, #e6ebff 50%, transparent 51%),
-      radial-gradient(1px 1px at 49% 6%, #fff 50%, transparent 51%), radial-gradient(1.4px 1.4px at 61% 20%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 72% 42%, #cfd8ff 50%, transparent 51%), radial-gradient(1px 1px at 83% 12%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 93% 32%, #e6ebff 50%, transparent 51%), radial-gradient(1px 1px at 3% 48%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 56% 44%, #e6ebff 50%, transparent 51%), radial-gradient(1.2px 1.2px at 88% 52%, #fff 50%, transparent 51%);
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 92%); mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 92%);
-    animation: twinkle 7s ease-in-out infinite; }
-  @keyframes twinkle { 0%, 100% { opacity: .42; } 50% { opacity: .7; } }
-  .hero::after { content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: var(--hz); height: 1px; pointer-events: none;
-    background: linear-gradient(90deg, transparent 2%, rgba(150,170,230,.25) 22%, rgba(255,214,170,.6) 50%, rgba(150,170,230,.25) 78%, transparent 98%);
-    animation: horizonBreath 14s ease-in-out infinite; }
-  @keyframes horizonBreath { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+  /* ---------- 머리말: 실사 사진 7장 슬라이드 쇼 (대시보드 · 운용 현황과 같은 사진) ---------- */
+  .hero { position: relative; isolation: isolate; display: grid; justify-items: center; text-align: center; gap: 20px;
+    width: 100vw; margin-left: calc(50% - 50vw); padding: clamp(72px, 11vw, 120px) 16px 0; overflow: hidden; background: #05070C; }
+  .bgshow { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+  .bgshow i { position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat; opacity: 0; animation: bgSlide 70s linear infinite; will-change: opacity, transform; }
+  .bgshow i:nth-child(1) { background-image: url(bg/forest-golden.jpg); background-position: center 62%; animation-delay: -3s; }
+  .bgshow i:nth-child(2) { background-image: url(bg/forest-green.jpg); background-position: center 45%; animation-delay: 7s; }
+  .bgshow i:nth-child(3) { background-image: url(bg/beach-palms.jpg); background-position: center 58%; animation-delay: 17s; }
+  .bgshow i:nth-child(4) { background-image: url(bg/beach-dusk.jpg); background-position: center 52%; animation-delay: 27s; }
+  .bgshow i:nth-child(5) { background-image: url(bg/moon-sea.jpg); background-position: center 40%; animation-delay: 37s; }
+  .bgshow i:nth-child(6) { background-image: url(bg/lake-mist.jpg); background-position: center 55%; animation-delay: 47s; }
+  .bgshow i:nth-child(7) { background-image: url(bg/coast-bandon.jpg); background-position: center 55%; animation-delay: 57s; }
+  @keyframes bgSlide { 0% { opacity: 0; transform: scale(1.02); } 3.57% { opacity: 1; } 14.29% { opacity: 1; } 17.86% { opacity: 0; transform: scale(1.08); } 100% { opacity: 0; transform: scale(1.08); } }
+  /* 사진 위 어둡게 깔기: 가운데 로고 주변 + 아래로 갈수록 페이지 바탕색으로 */
+  .bgshow::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(42% 46% at 50% 36%, rgba(4,6,10,.62), rgba(4,6,10,.2) 80%),
+                linear-gradient(180deg, rgba(5,7,12,.35) 0%, rgba(5,7,12,.18) 40%, rgba(5,7,12,.82) 82%, var(--bg) 100%); }
+  .hero::after { content: ""; position: absolute; z-index: -1; left: 10%; right: 10%; bottom: 140px; height: 1px; pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255,214,170,.5), transparent); }
 
-  .mark { width: clamp(104px, 17vw, 140px); height: auto; animation: markDawn 14s ease-in-out infinite; }
-  @keyframes markDawn {
-    0%, 100% { filter: drop-shadow(0 10px 30px rgba(0,0,0,.6)) drop-shadow(0 14px 22px rgba(255,196,140,.06)) drop-shadow(0 0 26px rgba(221,180,99,.16)); }
-    50% { filter: drop-shadow(0 10px 30px rgba(0,0,0,.6)) drop-shadow(0 14px 22px rgba(255,196,140,.28)) drop-shadow(0 0 36px rgba(221,180,99,.3)); } }
+  .mark { width: clamp(108px, 17vw, 144px); height: auto; animation: markGlow 14s ease-in-out infinite; }
+  @keyframes markGlow {
+    0%, 100% { filter: drop-shadow(0 10px 30px rgba(0,0,0,.65)) drop-shadow(0 0 22px rgba(221,180,99,.14)); }
+    50% { filter: drop-shadow(0 10px 30px rgba(0,0,0,.65)) drop-shadow(0 0 36px rgba(221,180,99,.32)); } }
 
-  /* 워드마크: Minjun ↔ 민준 (필기체 ↔ 송명체) | 2000 / CAPITAL / FX · CRYPTO · ETF */
-  .lockup { display: grid; justify-items: center; gap: 8px; }
-  .wordmark { margin: 0; display: flex; align-items: center; gap: clamp(12px, 2vw, 20px); line-height: 1; white-space: nowrap; }
+  /* 워드마크: PARK / INVESTMENT / FX · CRYPTO (Cinzel, 금빛 + 지나가는 빛) */
+  .lockup { display: grid; justify-items: center; gap: 10px; }
+  .wordmark { margin: 0; line-height: 1; }
   .gold { background: linear-gradient(105deg, transparent 42%, rgba(255,249,228,.95) 50%, transparent 58%),
       linear-gradient(180deg, #F6E3A8 0%, #DDBB6C 34%, #C29B48 62%, #9A7430 100%);
     background-size: 320% 100%, 100% 100%; background-position: 100% 0, 0 0; background-repeat: no-repeat;
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(0 1px 0 rgba(0,0,0,.6)) drop-shadow(0 0 16px rgba(214,178,102,.16)); animation: dawnSheen 14s ease-in-out infinite; }
-  @keyframes dawnSheen { 0%, 32% { background-position: 100% 0, 0 0; } 64%, 100% { background-position: 0 0, 0 0; } }
-  .wm-name { display: grid; place-items: center; min-width: 4.1em; font-size: clamp(54px, 9vw, 92px); }
-  .wm-name > span { grid-area: 1 / 1; }
-  .wm-en { animation: nameEn 16s ease-in-out infinite; }
-  .wm-ko { animation: nameKo 16s ease-in-out infinite; }
-  .wm-script { font: 400 1em/1.12 "Pinyon Script", "Snell Roundhand", cursive; padding: 0 .12em 0 .06em; margin: -.12em 0 -.18em; }
-  .wm-kr { font: 400 .7em/1.25 "Song Myung", "Nanum Myeongjo", serif; letter-spacing: .14em; margin-right: -.14em; display: inline-block; }
-  @keyframes nameEn { 0%, 40% { opacity: 1; filter: blur(0); } 48%, 90% { opacity: 0; filter: blur(4px); } 98%, 100% { opacity: 1; filter: blur(0); } }
-  @keyframes nameKo { 0%, 42% { opacity: 0; filter: blur(4px); } 50%, 88% { opacity: 1; filter: blur(0); } 96%, 100% { opacity: 0; filter: blur(4px); } }
-  .wm-hair { width: 1px; height: clamp(34px, 5vw, 48px); background: linear-gradient(transparent, rgba(201,162,77,.7), transparent); }
-  .wm-caps { font: 600 clamp(22px, 3.4vw, 32px)/1 "Cinzel", serif; letter-spacing: .3em; margin-right: -.3em; padding-top: 4px; }
-  .wm-capital { font: 600 clamp(14px, 1.8vw, 18px)/1 "Cinzel", serif; letter-spacing: .62em; margin-right: -.62em; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
-  .wm-desc { display: flex; align-items: center; gap: 12px; font: 600 clamp(9px, 1.1vw, 11px)/1 "Cinzel", serif; letter-spacing: .42em; margin-right: -.42em; color: #A88A4E; }
-  .wm-desc i { width: 34px; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,77,.55)); }
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,.6)) drop-shadow(0 0 16px rgba(214,178,102,.18)); animation: sheen 14s ease-in-out infinite; }
+  @keyframes sheen { 0%, 32% { background-position: 100% 0, 0 0; } 64%, 100% { background-position: 0 0, 0 0; } }
+  .wm-park { display: block; font: 600 clamp(52px, 9vw, 96px)/1 var(--cinzel); letter-spacing: .2em; margin-right: -.2em; }
+  .wm-inv { font: 600 clamp(14px, 1.9vw, 19px)/1 var(--cinzel); letter-spacing: .6em; margin-right: -.6em; }
+  .wm-desc { display: flex; align-items: center; gap: 12px; font: 600 clamp(9px, 1.1vw, 11px)/1 var(--cinzel); letter-spacing: .42em; margin-right: -.42em; color: #B89A5C; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
+  .wm-desc i { width: 34px; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,77,.6)); }
   .wm-desc i:last-child { transform: scaleX(-1); }
 
-  .tagline { font-size: clamp(17px, 2.2vw, 21px); color: var(--text); margin: 6px 0 0; max-width: 36ch; text-wrap: balance; }
+  .tagline { font-size: clamp(17px, 2.2vw, 21px); color: var(--text); margin: 6px 0 0; max-width: 34ch; text-wrap: balance; text-shadow: 0 1px 12px rgba(0,0,0,.6); }
   .status { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font: 600 13px var(--sans);
-    border: 1px solid var(--line); background: rgba(10,15,25,.75); color: var(--muted); }
+    border: 1px solid rgba(255,255,255,.12); background: rgba(5,7,12,.62); color: var(--muted); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
   .chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--up); box-shadow: 0 0 0 0 rgba(43,196,143,.6); animation: pulse 2s infinite; }
   @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(43,196,143,0); } 100% { box-shadow: 0 0 0 0 rgba(43,196,143,0); } }
   .chip b { color: var(--text); font-weight: 600; }
-  #tape { width: 100%; height: 140px; display: block; margin-top: 18px;
+  .cta { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border-radius: 999px; text-decoration: none;
+    font: 600 15px var(--sans); color: #1A1308; background: linear-gradient(180deg, #F2DA9C, #D3AE5E); box-shadow: 0 8px 24px -10px rgba(221,180,99,.7);
+    transition: transform .15s, box-shadow .15s; }
+  .cta:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -10px rgba(221,180,99,.85); }
+  .cta span { font-family: var(--mono); }
+  #tape { width: 100%; height: 120px; display: block; margin-top: 10px;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 
   /* ---------- 목표 ---------- */
@@ -118,12 +106,11 @@
   .goal p { margin: 0; color: var(--muted); max-width: 52ch; }
   .goal p b { color: var(--gold); font-weight: 600; }
 
-  /* ---------- 세 시장 ---------- */
+  /* ---------- 시장 ---------- */
   .markets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-  .mkt { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; display: grid; gap: 12px; align-content: start; position: relative; overflow: hidden; }
-  .mkt::before { content: ""; position: absolute; inset: 0 0 auto; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .7; }
+  .mkt { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; display: grid; gap: 12px; align-content: start; }
   .mkt .tt { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-  .mkt h3 { margin: 0; font: 600 22px/1 "Cinzel", serif; letter-spacing: .12em; color: var(--champagne); }
+  .mkt h3 { margin: 0; font: 600 22px/1 var(--cinzel); letter-spacing: .12em; color: var(--champagne); }
   .mkt .st { font: 600 12px var(--sans); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
   .mkt .st.live { color: var(--up); background: rgba(43,196,143,.1); }
   .mkt .st.soon { color: var(--muted); background: var(--bg-2); }
@@ -173,9 +160,10 @@
   .feat li::before { content: ""; width: 8px; height: 8px; margin-top: 9px; border-radius: 2px; background: var(--gold); transform: rotate(45deg); }
   .feat b { color: var(--text); font-weight: 600; }
   .feat .fd { display: block; font-size: 14px; }
+  .feat a { color: var(--gold); }
 
   /* ---------- 로드맵 ---------- */
-  .road { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; position: relative; }
+  .road { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
   .road li { display: grid; grid-template-columns: 34px 1fr auto; gap: 14px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--line); }
   .road li:last-child { border-bottom: 0; }
   .road .m { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); margin-top: 3px; display: grid; place-items: center; }
@@ -193,7 +181,8 @@
   .road .dream h3 { color: var(--champagne); }
 
   footer { border-top: 1px solid var(--line); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; color: var(--dim); font-size: 13px; }
-  footer .brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font: 600 13px "Cinzel", serif; letter-spacing: .12em; }
+  footer .brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font: 600 13px var(--cinzel); letter-spacing: .14em; }
+  footer .brand svg { width: 26px; height: 26px; }
 
   @media (max-width: 900px) {
     .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -202,8 +191,8 @@
   }
   @media (max-width: 520px) {
     .wrap { gap: 64px; }
-    .hero { --hz: 78%; padding-top: 56px; }
     .wm-desc { display: none; }
+    .wm-inv { letter-spacing: .5em; margin-right: -.5em; }
     .flow { grid-template-columns: minmax(0, 1fr); }
     .periods { grid-template-columns: minmax(0, 1fr); }
     .periods div + div { border-left: 0; border-top: 1px solid var(--line); }
@@ -211,56 +200,34 @@
     .road .tag { grid-column: 2; justify-self: start; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .hero .dawn, .hero::before, .hero::after, .mark, .gold, .wm-en, .wm-ko, .chip .dot { animation: none; }
-    .wm-ko { opacity: 0; }
+    .bgshow i, .mark, .gold, .chip .dot { animation: none; }
+    .bgshow i:first-child { opacity: 1; }
   }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 </style>
-
-<style>html, body { margin: 0; }</style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- 히어로 -->
+  <!-- 머리말 -->
   <header class="hero">
-    <i class="dawn" aria-hidden="true"></i>
-    <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="MINJUN 2000 CAPITAL 심볼">
-      <defs>
-        <linearGradient id="mj-gold" gradientUnits="userSpaceOnUse" x1="12" y1="54" x2="52" y2="12">
-          <stop offset="0" stop-color="#8A6828"/><stop offset=".32" stop-color="#C29B48"/><stop offset=".66" stop-color="#E6CB86"/><stop offset="1" stop-color="#FBF0CF"/>
-        </linearGradient>
-        <linearGradient id="mj-ring" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="64" y2="0">
-          <stop offset="0" stop-color="#7A5A24"/><stop offset=".5" stop-color="#C9A24D"/><stop offset=".8" stop-color="#EDD595"/><stop offset="1" stop-color="#A9853C"/>
-        </linearGradient>
-        <radialGradient id="mj-onyx" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#1B1C21"/><stop offset="1" stop-color="#08090B"/></radialGradient>
-        <radialGradient id="mj-light" cx=".8" cy=".12" r=".75"><stop offset="0" stop-color="#F6E3AE" stop-opacity=".13"/><stop offset="1" stop-color="#F6E3AE" stop-opacity="0"/></radialGradient>
-      </defs>
-      <circle cx="32" cy="32" r="31.4" fill="url(#mj-onyx)"/>
-      <circle cx="32" cy="32" r="31.4" fill="url(#mj-light)"/>
-      <path d="M35.05 2.96 A29.2 29.2 0 0 1 58.68 43.88 M55.62 49.16 A29.2 29.2 0 0 1 8.38 49.16 M5.32 43.88 A29.2 29.2 0 0 1 28.95 2.96" fill="none" stroke="url(#mj-ring)" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="32" cy="32" r="25" fill="none" stroke="url(#mj-ring)" stroke-opacity=".32" stroke-width=".6"/>
-      <g transform="translate(10.2 10.4) scale(.68)" fill="none" stroke="url(#mj-gold)" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8" stroke-linecap="butt">
-        <polyline points="15,50 15,19.5 29,35.5 47,17.5"/><polyline points="38.6,17.5 47,17.5 47,25.9"/><path d="M40.2 24.3 V43 A7 7 0 0 1 33.2 50 H27.5"/>
-      </g>
-    </svg>
+    <div class="bgshow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="PARK INVESTMENT 심볼"><defs><linearGradient id="pkm-gold" gradientUnits="userSpaceOnUse" x1="14" y1="54" x2="50" y2="10"><stop offset="0" stop-color="#8A6828"/><stop offset=".32" stop-color="#C29B48"/><stop offset=".66" stop-color="#E6CB86"/><stop offset="1" stop-color="#FBF0CF"/></linearGradient><linearGradient id="pkm-ring" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="64" y2="0"><stop offset="0" stop-color="#7A5A24"/><stop offset=".5" stop-color="#C9A24D"/><stop offset=".8" stop-color="#EDD595"/><stop offset="1" stop-color="#A9853C"/></linearGradient><radialGradient id="pkm-onyx" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#1D1E24"/><stop offset="1" stop-color="#08090B"/></radialGradient><radialGradient id="pkm-light" cx=".8" cy=".12" r=".75"><stop offset="0" stop-color="#F6E3AE" stop-opacity=".14"/><stop offset="1" stop-color="#F6E3AE" stop-opacity="0"/></radialGradient></defs><circle cx="32" cy="32" r="31.4" fill="url(#pkm-onyx)"/><circle cx="32" cy="32" r="31.4" fill="url(#pkm-light)"/><circle cx="32" cy="32" r="29.4" fill="none" stroke="url(#pkm-ring)" stroke-width="1.6"/><circle cx="32" cy="32" r="26.6" fill="none" stroke="url(#pkm-ring)" stroke-opacity=".45" stroke-width=".5"/><path fill="url(#pkm-gold)" d="M13.89 52Q10.95 52 9.56 50.92Q8.17 49.84 8.17 48.3Q8.17 47.12 9.02 46.59Q9.87 46.06 10.71 46.06Q11.11 46.06 11.58 46.36Q12.06 46.66 12.06 47.3Q12.06 47.82 11.6 48.24Q11.14 48.65 10.52 48.65Q10.17 48.65 9.84 48.6Q9.52 48.55 9.25 48.38V48.52Q9.25 49.71 10.41 50.48Q11.57 51.24 13.54 51.24Q15.27 51.24 16.85 50.65Q18.42 50.06 20.33 48.38Q22.23 46.71 24.83 43.5Q27.44 40.29 31.24 35.05Q29.73 34.05 29.73 32.68Q29.73 31.46 30.79 30.68Q31.84 29.9 33 29.9Q33.51 29.9 33.59 30.03Q33.67 30.17 33.67 30.17Q33.67 30.33 33.35 30.38Q32.11 30.57 31.46 31.35Q30.81 32.14 30.81 33.19Q30.81 33.81 31.7 34.4L32.08 33.89Q35.02 29.92 37.65 26.93Q40.29 23.93 42.89 21.57Q45.49 19.21 48.38 17.24L49.49 16.51Q47.95 15.57 45.55 15.08Q43.15 14.59 39.85 14.59Q34.7 14.59 30.1 16.05Q25.5 17.51 21.99 19.87Q18.48 22.23 16.52 25.02Q14.57 27.82 14.65 30.49Q14.73 32.7 15.94 33.57Q17.16 34.43 18.32 34.43Q20.26 34.43 22.23 33.24Q24.2 32.06 26 30.19Q27.79 28.33 29.22 26.25Q30.65 24.17 31.53 22.33Q32.4 20.48 32.54 19.37Q32.62 18.45 32.92 18.45Q33.19 18.45 33.19 19.29Q33.27 21.64 32.27 24.38Q31.27 27.12 29.31 29.57Q27.36 32.03 24.55 33.59Q21.74 35.16 18.24 35.16Q16.72 35.16 15.29 33.92Q13.86 32.68 13.81 30.65Q13.73 28.01 15.19 25.55Q16.64 23.1 19.23 20.99Q21.83 18.88 25.19 17.32Q28.55 15.75 32.3 14.88Q36.05 14 39.8 14Q43.17 14 45.82 14.51Q48.46 15.03 50.41 15.97Q52.08 15.03 53.36 14.59Q54.64 14.16 55.29 14.16Q55.8 14.16 55.83 14.43Q55.83 14.59 55.71 14.7Q55.59 14.81 55.13 14.86Q53.35 15.21 51.38 16.48Q53.56 17.78 54.64 19.59Q55.72 21.39 55.72 23.5Q55.72 26.01 54.27 28.36Q52.81 30.71 50.33 32.57Q47.84 34.43 44.73 35.52Q41.61 36.62 38.29 36.62Q36.16 36.62 34.35 36.24Q29.92 42.18 26.25 45.62Q22.58 49.06 19.52 50.53Q16.45 52 13.89 52ZM38.18 35.91Q40.34 35.91 42.82 35.01Q45.31 34.11 47.5 32.33Q49.7 30.54 51.09 27.89Q52.48 25.23 52.48 21.75Q52.48 18.88 50.41 17.16Q47.46 19.29 44.23 23.12Q40.99 26.95 37.37 32.03Q36.72 32.97 36.1 33.85Q35.48 34.73 34.86 35.56Q36.53 35.91 38.18 35.91Z"/></svg>
 
     <div class="lockup">
-      <h1 class="wordmark" aria-label="MINJUN 2000 CAPITAL (민준 2000 캐피탈)">
-        <span class="wm-name" aria-hidden="true"><span class="wm-en"><span class="wm-script gold">Minjun</span></span><span class="wm-ko"><span class="wm-kr gold">민준</span></span></span>
-        <i class="wm-hair" aria-hidden="true"></i><span class="wm-caps gold" aria-hidden="true">2000</span>
-      </h1>
-      <div class="wm-capital gold" aria-hidden="true">CAPITAL</div>
-      <div class="wm-desc" aria-hidden="true"><i></i><span>FX · CRYPTO · ETF</span><i></i></div>
+      <h1 class="wordmark" aria-label="PARK INVESTMENT"><span class="wm-park gold">PARK</span></h1>
+      <div class="wm-inv gold" aria-hidden="true">INVESTMENT</div>
+      <div class="wm-desc" aria-hidden="true"><i></i><span>FX · CRYPTO</span><i></i></div>
     </div>
 
-    <p class="tagline">외환 · 코인 · ETF 시장을 쉬지 않고 지켜보며, 미리 정하고 검증한 규칙대로만 매매하는 자체 개발 시스템 트레이딩</p>
+    <p class="tagline">외환 · 코인 시장을 쉬지 않고 지켜보며, 미리 정하고 검증한 규칙대로만 매매하는 자체 개발 시스템 트레이딩</p>
 
     <div class="status">
       <span class="chip"><span class="dot"></span>데모·모의 계좌로 실전 검증 중</span>
       <span class="chip">가동 <b class="num" id="days">D+1</b></span>
-      <span class="chip">운용 포트 <b class="num">16</b>개 · FX 7 · 코인 9</span>
+      <span class="chip">운용 포트 <b class="num">11</b>개 · FX 7 · 코인 4</span>
     </div>
+    <a class="cta" href="live/">운용 현황 보기 <span>→</span></a>
 
     <canvas id="tape" aria-hidden="true"></canvas>
   </header>
@@ -269,28 +236,28 @@
   <section class="goal" aria-labelledby="goal-h">
     <span class="eyebrow" id="goal-h">Target</span>
     <div class="krw num"><span class="won">₩</span>200,000,000,000</div>
-    <p>이름의 <b>2000</b>은 운용 목표 <b>2,000억 원</b>을 뜻합니다. 장기 목표는 투자 회사 설립입니다.</p>
+    <p>운용 목표는 <b>2,000억 원</b>, 장기 목표는 <b>투자 회사 설립</b>입니다. 이름처럼, 운용하는 사람이 이름을 걸고 책임집니다.</p>
   </section>
 
-  <!-- 세 시장 -->
+  <!-- 시장 -->
   <section class="sec" aria-labelledby="mkt-h">
     <div class="sec-head">
-      <span class="eyebrow">Three markets · one rulebook</span>
-      <h2 id="mkt-h">세 시장을 하나의 규칙 체계로 운용합니다</h2>
-      <p class="lead">시장마다 계좌·시세·비용 구조는 다르지만, 신호 → 리스크 심사 → 주문 → 기록으로 이어지는 같은 엔진이 돌립니다. 포트(전략 계좌)마다 독립적으로 운용하고 비교합니다.</p>
+      <span class="eyebrow">Markets · one rulebook</span>
+      <h2 id="mkt-h">여러 시장을 하나의 규칙 체계로 운용합니다</h2>
+      <p class="lead">시장마다 계좌·시세·비용 구조는 다르지만, 신호 → 리스크 심사 → 주문 → 기록으로 이어지는 같은 엔진이 돌립니다. 포트(전략 계좌)마다 독립적으로 운용하고 비교하며, 성적이 나쁘거나 다른 포트와 겹치는 포트는 정리합니다.</p>
     </div>
     <div class="markets">
       <article class="mkt">
         <div class="tt"><h3>FX</h3><span class="st live">데모 계좌 가동</span></div>
         <div class="ports num">7<small>포트</small></div>
-        <p>주요 통화쌍의 추세·돌파·평균회귀 규칙을 같은 조건에서 나란히 검증합니다. 브로커 서버에 손절 주문을 함께 걸어 시스템이 멈춰도 보호됩니다.</p>
-        <div class="tf"><span>H1</span><span>H4</span><span>M5</span><span>OANDA</span></div>
+        <p>주요 통화쌍의 추세·평균회귀·틱 쏠림 규칙을 같은 조건에서 나란히 검증합니다. 브로커 서버에 손절 주문을 함께 걸어 시스템이 멈춰도 보호됩니다.</p>
+        <div class="tf"><span>D</span><span>H4</span><span>H1</span><span>S5</span><span>OANDA</span></div>
       </article>
       <article class="mkt">
         <div class="tt"><h3>CRYPTO</h3><span class="st live">모의 계좌 가동</span></div>
-        <div class="ports num">9<small>포트</small></div>
-        <p>BTC · ETH 와 변동성이 큰 코인을 따로 운용합니다. 현물 매수만, 레버리지 없이. 거래 수수료가 큰 시장이라 수수료를 이길 수 있는 일봉·4시간봉 중심으로 설계했습니다.</p>
-        <div class="tf"><span>D</span><span>H4</span><span>H1</span><span>Kraken 시세</span></div>
+        <div class="ports num">4<small>포트</small></div>
+        <p>BTC · ETH 와 주요 코인을 현물 매수만, 레버리지 없이 운용합니다. 수수료가 큰 시장이라 짧은 주기는 정리하고 수수료를 이길 수 있는 일봉·4시간봉만 남겼습니다.</p>
+        <div class="tf"><span>D</span><span>H4</span><span>Kraken 시세</span></div>
       </article>
       <article class="mkt">
         <div class="tt"><h3>ETF</h3><span class="st soon">준비 중</span></div>
@@ -310,9 +277,9 @@
     <ol class="flow">
       <li><h3>시장 감시</h3><p>실시간 호가 수신. 급변·호가 확대를 감지하면 수량을 줄이거나 진입을 멈춥니다.</p></li>
       <li><h3>신호 생성</h3><p>캔들 마감마다 포트별 규칙으로 매수·매도 판단.</p></li>
-      <li><h3>리스크 심사</h3><p>손실 한도, 동시 보유, 통화 노출, 스프레드 조건을 통과한 신호만 채택.</p></li>
+      <li><h3>리스크 심사</h3><p>손실 한도, 동시 보유, 같은 통화 한 방향 쏠림, 스프레드 조건을 통과한 신호만 채택.</p></li>
       <li><h3>주문 집행</h3><p>손절과 함께 주문. 손실 크기는 진입 전에 정해집니다.</p></li>
-      <li><h3>기록·보고</h3><p>체결·청산 즉시 알림. 모든 판단 근거를 저장해 다시 검토.</p></li>
+      <li><h3>기록·보고</h3><p>체결·청산 즉시 알림. 포트마다 매일 매매 이유와 결과를 보고합니다.</p></li>
     </ol>
   </section>
 
@@ -362,11 +329,11 @@
     <div class="built">
       <div class="sec" style="gap:20px">
         <ul class="feat">
-          <li><span><b>자산별 실시간 대시보드</b><span class="fd">FX · 코인 · ETF 페이지, 차트와 판단 근거, 휴대폰에서도 확인</span></span></li>
-          <li><span><b>캔들 질문 · 전략 회의</b><span class="fd">궁금한 캔들을 짚으면 그 순간 규칙이 무엇을 봤는지 조건별로 보여 줌</span></span></li>
-          <li><span><b>위원회 그림자 운영</b><span class="fd">7가지 지표 가족의 투표를 실시간 기록 — 매매에는 쓰지 않고 검증만</span></span></li>
-          <li><span><b>텔레그램 알림</b><span class="fd">체결·청산·경고 즉시, 매일 장 마감 후 리포트</span></span></li>
-          <li><span><b>자동 복구</b><span class="fd">부팅·중단 시 자동 재시작, 브로커 점검 시간은 오류로 세지 않음</span></span></li>
+          <li><span><b>실시간 대시보드</b><span class="fd">FX · 코인 포트 현황, 차트와 판단 근거, 휴대폰에서도 확인</span></span></li>
+          <li><span><b>포트 매니저 보고</b><span class="fd">포트마다 매일 매매 이유 · 목표 대비 결과 · 개선 안건을 정리해 전략 회의 자료로</span></span></li>
+          <li><span><b>포트 사이 쏠림 경고</b><span class="fd">여러 포트가 같은 통화·같은 방향에 몰리면 알림</span></span></li>
+          <li><span><b>운용 현황 공개</b><span class="fd">평일 매일 갱신 — <a href="live/">수익률 · 포트별 성적 · 최근 청산</a> (% 와 R 만)</span></span></li>
+          <li><span><b>텔레그램 알림 · 자동 복구</b><span class="fd">체결·청산·경고 즉시, 장 마감 후 리포트. 부팅·중단 시 자동 재시작</span></span></li>
         </ul>
         <ul class="stack">
           <li>Python<span>3.12</span></li><li>OANDA<span>v20 API</span></li><li>Kraken<span>공개 시세</span></li><li>IBKR<span>예정</span></li>
@@ -375,10 +342,10 @@
         </ul>
       </div>
       <div class="facts">
-        <div class="fact"><div class="v num">521</div><div class="k">자동 테스트</div></div>
-        <div class="fact"><div class="v num">34</div><div class="k">사전 등록 실험</div></div>
+        <div class="fact"><div class="v num">573</div><div class="k">자동 테스트</div></div>
+        <div class="fact"><div class="v num">43</div><div class="k">사전 등록 실험</div></div>
         <div class="fact"><div class="v num">8년</div><div class="k">검증 데이터 (2018 –)</div></div>
-        <div class="fact"><div class="v num">16</div><div class="k">독립 운용 포트</div></div>
+        <div class="fact"><div class="v num">11</div><div class="k">운용 중인 포트</div></div>
       </div>
     </div>
   </section>
@@ -393,6 +360,7 @@
       <li class="done"><span class="m"></span><div><h3>기반 · 리스크 · 운영 체계</h3><p>브로커 연동, 백테스트 엔진, 손실 한도·킬 스위치, 대시보드·알림·자동 복구</p></div><span class="tag">완료</span></li>
       <li class="done"><span class="m"></span><div><h3>FX 데모 검증 시작</h3><p>여러 주기의 규칙을 독립 계좌에서 나란히 운용</p></div><span class="tag">2026.9</span></li>
       <li class="done"><span class="m"></span><div><h3>코인 모의 포트</h3><p>Kraken 시세 · 소수 수량 엔진 · 수수료 반영 모의 계좌</p></div><span class="tag">2026.10</span></li>
+      <li class="done"><span class="m"></span><div><h3>포트 정리 · PARK INVESTMENT</h3><p>같은 방향으로 움직이는 포트는 통합하고 성적이 나쁜 포트는 정지 (기록은 보존), 운용 현황 공개</p></div><span class="tag">2026.10</span></li>
       <li class="now"><span class="m"></span><div><h3>데모 검증 · 연구</h3><p>실제 체결이 백테스트처럼 움직이는지 확인, 사전 등록 실험 계속</p></div><span class="tag">진행 중</span></li>
       <li class="next"><span class="m"></span><div><h3>클라우드 서버 이전 · 실거래 준비</h3><p>기준을 통과한 포트만, 소액부터</p></div><span class="tag">기준 충족 시</span></li>
       <li class="next"><span class="m"></span><div><h3>주식 · ETF</h3><p>IBKR 모의 계좌로 시작</p></div><span class="tag">다음 단계</span></li>
@@ -401,11 +369,8 @@
   </section>
 
   <footer>
-    <span class="brand">
-      <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31" fill="#0B0C10" stroke="#C9A24D" stroke-opacity=".8" stroke-width="2"/><g transform="translate(10.2 10.4) scale(.68)" fill="none" stroke="#DDB463" stroke-width="5"><polyline points="15,50 15,19.5 29,35.5 47,17.5"/><polyline points="38.6,17.5 47,17.5 47,25.9"/><path d="M40.2 24.3 V43 A7 7 0 0 1 33.2 50 H27.5"/></g></svg>
-      MINJUN 2000 CAPITAL
-    </span>
-    <span>개인 개발 프로젝트 · 투자 권유·자문 아님 · 외부 자금 운용·판매 없음 · 현재 데모·모의 계좌(가상 자금)로 운용</span>
+    <span class="brand"><svg class="fmark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="pkf-gold" gradientUnits="userSpaceOnUse" x1="14" y1="54" x2="50" y2="10"><stop offset="0" stop-color="#8A6828"/><stop offset=".32" stop-color="#C29B48"/><stop offset=".66" stop-color="#E6CB86"/><stop offset="1" stop-color="#FBF0CF"/></linearGradient><linearGradient id="pkf-ring" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="64" y2="0"><stop offset="0" stop-color="#7A5A24"/><stop offset=".5" stop-color="#C9A24D"/><stop offset=".8" stop-color="#EDD595"/><stop offset="1" stop-color="#A9853C"/></linearGradient><radialGradient id="pkf-onyx" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#1D1E24"/><stop offset="1" stop-color="#08090B"/></radialGradient><radialGradient id="pkf-light" cx=".8" cy=".12" r=".75"><stop offset="0" stop-color="#F6E3AE" stop-opacity=".14"/><stop offset="1" stop-color="#F6E3AE" stop-opacity="0"/></radialGradient></defs><circle cx="32" cy="32" r="31.4" fill="url(#pkf-onyx)"/><circle cx="32" cy="32" r="31.4" fill="url(#pkf-light)"/><circle cx="32" cy="32" r="29.4" fill="none" stroke="url(#pkf-ring)" stroke-width="1.6"/><circle cx="32" cy="32" r="26.6" fill="none" stroke="url(#pkf-ring)" stroke-opacity=".45" stroke-width=".5"/><path fill="url(#pkf-gold)" d="M13.89 52Q10.95 52 9.56 50.92Q8.17 49.84 8.17 48.3Q8.17 47.12 9.02 46.59Q9.87 46.06 10.71 46.06Q11.11 46.06 11.58 46.36Q12.06 46.66 12.06 47.3Q12.06 47.82 11.6 48.24Q11.14 48.65 10.52 48.65Q10.17 48.65 9.84 48.6Q9.52 48.55 9.25 48.38V48.52Q9.25 49.71 10.41 50.48Q11.57 51.24 13.54 51.24Q15.27 51.24 16.85 50.65Q18.42 50.06 20.33 48.38Q22.23 46.71 24.83 43.5Q27.44 40.29 31.24 35.05Q29.73 34.05 29.73 32.68Q29.73 31.46 30.79 30.68Q31.84 29.9 33 29.9Q33.51 29.9 33.59 30.03Q33.67 30.17 33.67 30.17Q33.67 30.33 33.35 30.38Q32.11 30.57 31.46 31.35Q30.81 32.14 30.81 33.19Q30.81 33.81 31.7 34.4L32.08 33.89Q35.02 29.92 37.65 26.93Q40.29 23.93 42.89 21.57Q45.49 19.21 48.38 17.24L49.49 16.51Q47.95 15.57 45.55 15.08Q43.15 14.59 39.85 14.59Q34.7 14.59 30.1 16.05Q25.5 17.51 21.99 19.87Q18.48 22.23 16.52 25.02Q14.57 27.82 14.65 30.49Q14.73 32.7 15.94 33.57Q17.16 34.43 18.32 34.43Q20.26 34.43 22.23 33.24Q24.2 32.06 26 30.19Q27.79 28.33 29.22 26.25Q30.65 24.17 31.53 22.33Q32.4 20.48 32.54 19.37Q32.62 18.45 32.92 18.45Q33.19 18.45 33.19 19.29Q33.27 21.64 32.27 24.38Q31.27 27.12 29.31 29.57Q27.36 32.03 24.55 33.59Q21.74 35.16 18.24 35.16Q16.72 35.16 15.29 33.92Q13.86 32.68 13.81 30.65Q13.73 28.01 15.19 25.55Q16.64 23.1 19.23 20.99Q21.83 18.88 25.19 17.32Q28.55 15.75 32.3 14.88Q36.05 14 39.8 14Q43.17 14 45.82 14.51Q48.46 15.03 50.41 15.97Q52.08 15.03 53.36 14.59Q54.64 14.16 55.29 14.16Q55.8 14.16 55.83 14.43Q55.83 14.59 55.71 14.7Q55.59 14.81 55.13 14.86Q53.35 15.21 51.38 16.48Q53.56 17.78 54.64 19.59Q55.72 21.39 55.72 23.5Q55.72 26.01 54.27 28.36Q52.81 30.71 50.33 32.57Q47.84 34.43 44.73 35.52Q41.61 36.62 38.29 36.62Q36.16 36.62 34.35 36.24Q29.92 42.18 26.25 45.62Q22.58 49.06 19.52 50.53Q16.45 52 13.89 52ZM38.18 35.91Q40.34 35.91 42.82 35.01Q45.31 34.11 47.5 32.33Q49.7 30.54 51.09 27.89Q52.48 25.23 52.48 21.75Q52.48 18.88 50.41 17.16Q47.46 19.29 44.23 23.12Q40.99 26.95 37.37 32.03Q36.72 32.97 36.1 33.85Q35.48 34.73 34.86 35.56Q36.53 35.91 38.18 35.91Z"/></svg> PARK INVESTMENT</span>
+    <span>개인 개발 프로젝트 · 투자 권유·자문 아님 · 외부 자금 운용·판매 없음 · 현재 데모·모의 계좌(가상 자금)로 운용 · 사진 Unsplash</span>
   </footer>
 </div>
 
@@ -418,7 +383,7 @@
   const days = Math.max(1, Math.floor((Date.now() - start) / 86400000) + 1);
   document.getElementById("days").textContent = "D+" + days;
 
-  // 지평선 아래 캔들 테이프 (장식용 무작위 흐름, 우상향 기울기)
+  // 머리말 아래 캔들 테이프 (장식용 무작위 흐름, 우상향 기울기)
   const cv = document.getElementById("tape"), ctx = cv.getContext("2d");
   let seed = 20001;
   const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);

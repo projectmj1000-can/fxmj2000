@@ -1,30 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="MINJUN 2000 CAPITAL">
-  <!-- MINJUN 2000 CAPITAL 인장 심볼 (2026-10-03, FX · 코인 · ETF 통합): 원형 인장, 바깥 금테는 세 조각 = FX · CRYPTO · ETF,
-       가운데 MJ 모노그램 — M 의 획이 45° 상승 화살표로 뻗고 그 화살표에서 J 가 내려온다 (세 시장을 하나로 끌어올림).
-       모든 획은 같은 굵기, 오닉스 바탕 + 샴페인 골드 + 오른쪽 위에서 비추는 은은한 빛 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="PARK INVESTMENT">
+  <!-- PARK INVESTMENT 인장 심볼 (2026-10-08 사용자 선택 B '서명 P'): 오닉스 원형 인장 + 이중 금테 + 가운데 필기체 P (Pinyon Script, SIL OFL — 윤곽선으로 바꿔 글꼴 없이 그림).
+       손으로 쓴 서명처럼 — 이름(Park)을 걸고 책임지고 운용한다는 뜻. 오른쪽 위에서 비추는 은은한 빛 -->
   <defs>
-    <linearGradient id="mj-gold" gradientUnits="userSpaceOnUse" x1="12" y1="54" x2="52" y2="12">
+    <linearGradient id="pk-gold" gradientUnits="userSpaceOnUse" x1="14" y1="54" x2="50" y2="10">
       <stop offset="0" stop-color="#8A6828"/><stop offset=".32" stop-color="#C29B48"/><stop offset=".66" stop-color="#E6CB86"/>
       <stop offset="1" stop-color="#FBF0CF"/>
     </linearGradient>
-    <linearGradient id="mj-ring" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="64" y2="0">
+    <linearGradient id="pk-ring" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="64" y2="0">
       <stop offset="0" stop-color="#7A5A24"/><stop offset=".5" stop-color="#C9A24D"/><stop offset=".8" stop-color="#EDD595"/><stop offset="1" stop-color="#A9853C"/>
     </linearGradient>
-    <radialGradient id="mj-onyx" cx=".5" cy=".42" r=".62">
-      <stop offset="0" stop-color="#1B1C21"/><stop offset="1" stop-color="#08090B"/>
+    <radialGradient id="pk-onyx" cx=".5" cy=".42" r=".62">
+      <stop offset="0" stop-color="#1D1E24"/><stop offset="1" stop-color="#08090B"/>
     </radialGradient>
-    <radialGradient id="mj-light" cx=".8" cy=".12" r=".75">
-      <stop offset="0" stop-color="#F6E3AE" stop-opacity=".13"/><stop offset="1" stop-color="#F6E3AE" stop-opacity="0"/>
+    <radialGradient id="pk-light" cx=".8" cy=".12" r=".75">
+      <stop offset="0" stop-color="#F6E3AE" stop-opacity=".14"/><stop offset="1" stop-color="#F6E3AE" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <circle cx="32" cy="32" r="31.4" fill="url(#mj-onyx)"/>
-  <circle cx="32" cy="32" r="31.4" fill="url(#mj-light)"/>
-  <path d="M35.05 2.96 A29.2 29.2 0 0 1 58.68 43.88 M55.62 49.16 A29.2 29.2 0 0 1 8.38 49.16 M5.32 43.88 A29.2 29.2 0 0 1 28.95 2.96"
-        fill="none" stroke="url(#mj-ring)" stroke-width="1.8" stroke-linecap="round"/>
-  <circle cx="32" cy="32" r="25" fill="none" stroke="url(#mj-ring)" stroke-opacity=".32" stroke-width=".6"/>
-  <g transform="translate(10.2 10.4) scale(.68)" fill="none" stroke="url(#mj-gold)" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8" stroke-linecap="butt">
-    <polyline points="15,50 15,19.5 29,35.5 47,17.5"/>
-    <polyline points="38.6,17.5 47,17.5 47,25.9"/>
-    <path d="M40.2 24.3 V43 A7 7 0 0 1 33.2 50 H27.5"/>
-  </g>
+  <circle cx="32" cy="32" r="31.4" fill="url(#pk-onyx)"/>
+  <circle cx="32" cy="32" r="31.4" fill="url(#pk-light)"/>
+  <circle cx="32" cy="32" r="29.4" fill="none" stroke="url(#pk-ring)" stroke-width="1.6"/>
+  <circle cx="32" cy="32" r="26.6" fill="none" stroke="url(#pk-ring)" stroke-opacity=".45" stroke-width=".5"/>
+  <path fill="url(#pk-gold)" d="M13.89 52Q10.95 52 9.56 50.92Q8.17 49.84 8.17 48.3Q8.17 47.12 9.02 46.59Q9.87 46.06 10.71 46.06Q11.11 46.06 11.58 46.36Q12.06 46.66 12.06 47.3Q12.06 47.82 11.6 48.24Q11.14 48.65 10.52 48.65Q10.17 48.65 9.84 48.6Q9.52 48.55 9.25 48.38V48.52Q9.25 49.71 10.41 50.48Q11.57 51.24 13.54 51.24Q15.27 51.24 16.85 50.65Q18.42 50.06 20.33 48.38Q22.23 46.71 24.83 43.5Q27.44 40.29 31.24 35.05Q29.73 34.05 29.73 32.68Q29.73 31.46 30.79 30.68Q31.84 29.9 33 29.9Q33.51 29.9 33.59 30.03Q33.67 30.17 33.67 30.17Q33.67 30.33 33.35 30.38Q32.11 30.57 31.46 31.35Q30.81 32.14 30.81 33.19Q30.81 33.81 31.7 34.4L32.08 33.89Q35.02 29.92 37.65 26.93Q40.29 23.93 42.89 21.57Q45.49 19.21 48.38 17.24L49.49 16.51Q47.95 15.57 45.55 15.08Q43.15 14.59 39.85 14.59Q34.7 14.59 30.1 16.05Q25.5 17.51 21.99 19.87Q18.48 22.23 16.52 25.02Q14.57 27.82 14.65 30.49Q14.73 32.7 15.94 33.57Q17.16 34.43 18.32 34.43Q20.26 34.43 22.23 33.24Q24.2 32.06 26 30.19Q27.79 28.33 29.22 26.25Q30.65 24.17 31.53 22.33Q32.4 20.48 32.54 19.37Q32.62 18.45 32.92 18.45Q33.19 18.45 33.19 19.29Q33.27 21.64 32.27 24.38Q31.27 27.12 29.31 29.57Q27.36 32.03 24.55 33.59Q21.74 35.16 18.24 35.16Q16.72 35.16 15.29 33.92Q13.86 32.68 13.81 30.65Q13.73 28.01 15.19 25.55Q16.64 23.1 19.23 20.99Q21.83 18.88 25.19 17.32Q28.55 15.75 32.3 14.88Q36.05 14 39.8 14Q43.17 14 45.82 14.51Q48.46 15.03 50.41 15.97Q52.08 15.03 53.36 14.59Q54.64 14.16 55.29 14.16Q55.8 14.16 55.83 14.43Q55.83 14.59 55.71 14.7Q55.59 14.81 55.13 14.86Q53.35 15.21 51.38 16.48Q53.56 17.78 54.64 19.59Q55.72 21.39 55.72 23.5Q55.72 26.01 54.27 28.36Q52.81 30.71 50.33 32.57Q47.84 34.43 44.73 35.52Q41.61 36.62 38.29 36.62Q36.16 36.62 34.35 36.24Q29.92 42.18 26.25 45.62Q22.58 49.06 19.52 50.53Q16.45 52 13.89 52ZM38.18 35.91Q40.34 35.91 42.82 35.01Q45.31 34.11 47.5 32.33Q49.7 30.54 51.09 27.89Q52.48 25.23 52.48 21.75Q52.48 18.88 50.41 17.16Q47.46 19.29 44.23 23.12Q40.99 26.95 37.37 32.03Q36.72 32.97 36.1 33.85Q35.48 34.73 34.86 35.56Q36.53 35.91 38.18 35.91Z"/>
 </svg>

@@ -83,7 +83,17 @@
   .wm-desc i { width: 34px; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,77,.6)); }
   .wm-desc i:last-child { transform: scaleX(-1); }
 
-  .tagline { font-size: clamp(17px, 2.2vw, 21px); color: var(--text); margin: 6px 0 0; max-width: 34ch; text-wrap: balance; text-shadow: 0 1px 12px rgba(0,0,0,.6); }
+  /* 한 줄 소개: 영문 → 한글 스위칭 (같은 칸에 겹쳐 두고 흐려지며 바뀜, 14초 한 바퀴). 움직임 줄이기면 한글만 */
+  .tagline { display: grid; margin: 6px 0 0; color: var(--text); text-shadow: 0 1px 12px rgba(0,0,0,.6); }
+  .tagline > span { grid-area: 1 / 1; display: grid; gap: 4px; align-content: center; justify-items: center; }
+  .tl-1 { font-size: clamp(17px, 2.2vw, 21px); line-height: 1.5; text-wrap: balance; }
+  .tl-2 { font-size: clamp(17px, 2.2vw, 21px); line-height: 1.5; text-wrap: balance; }
+  .tl-en .tl-1, .tl-en .tl-2 { font-family: var(--sans); letter-spacing: .01em; }
+  .tl-brand { font: 600 .92em/1 var(--cinzel); letter-spacing: .14em; margin-left: .3em; color: var(--gold); white-space: nowrap; }
+  .tl-en { animation: tlEn 14s ease-in-out infinite; }
+  .tl-ko { animation: tlKo 14s ease-in-out infinite; }
+  @keyframes tlEn { 0%, 40% { opacity: 1; filter: blur(0); transform: none; } 47%, 93% { opacity: 0; filter: blur(4px); transform: translateY(-4px); } 100% { opacity: 1; filter: blur(0); transform: none; } }
+  @keyframes tlKo { 0%, 43% { opacity: 0; filter: blur(4px); transform: translateY(4px); } 50%, 90% { opacity: 1; filter: blur(0); transform: none; } 97%, 100% { opacity: 0; filter: blur(4px); transform: translateY(4px); } }
   .status { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font: 600 13px var(--sans);
     border: 1px solid rgba(255,255,255,.12); background: rgba(5,7,12,.62); color: var(--muted); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
@@ -200,7 +210,8 @@
     .road .tag { grid-column: 2; justify-self: start; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .bgshow i, .mark, .gold, .chip .dot { animation: none; }
+    .bgshow i, .mark, .gold, .chip .dot, .tl-en, .tl-ko { animation: none; }
+    .tl-en { opacity: 0; }
     .bgshow i:first-child { opacity: 1; }
   }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
@@ -220,7 +231,10 @@
       <div class="wm-desc" aria-hidden="true"><i></i><span>FX · CRYPTO</span><i></i></div>
     </div>
 
-    <p class="tagline">검증된 규칙만, 24시간 실행한다.<br>감정 없는 시스템 트레이딩.</p>
+    <p class="tagline" aria-label="검증된 규칙으로 24시간 거래하는 최고의 시스템 트레이딩, PARK INVESTMENT">
+      <span class="tl-en" aria-hidden="true"><span class="tl-1">Trading around the clock on proven rules.</span><span class="tl-2">The finest in systematic trading <span class="tl-brand">PARK INVESTMENT</span></span></span>
+      <span class="tl-ko" aria-hidden="true"><span class="tl-1">검증된 규칙으로 24시간 거래하는</span><span class="tl-2">최고의 시스템 트레이딩 <span class="tl-brand">PARK INVESTMENT</span></span></span>
+    </p>
 
     <div class="status">
       <span class="chip"><span class="dot"></span>실전 검증 중 · 데모 계좌</span>

@@ -191,7 +191,7 @@
 
   <section class="card" id="ports-card">
     <div class="thead">
-      <div class="ttl"><h2>운용 중인 포트</h2><p class="note">포트 하나 = 규칙 하나로 따로 운용하는 계좌</p></div>
+      <div class="ttl"><h2>운용 중인 포트</h2><p class="note">포트 하나 = 규칙 하나, 독립 계좌</p></div>
       <div class="seg" role="group" aria-label="시장">
         <button type="button" data-f="all" aria-pressed="true">전체</button><button type="button" data-f="FX" aria-pressed="false">FX</button><button type="button" data-f="코인" aria-pressed="false">코인</button>
       </div>
@@ -234,7 +234,7 @@
   </section>
 
   <footer>
-    <p>모의 계좌 운용 기록이며 투자 권유가 아닙니다. 수익률은 청산된 거래만 셉니다.</p>
+    <p>모의 계좌 운용 기록 · 투자 권유 아님 · 수익률은 청산 거래 기준</p>
     <p><span id="asof">평일 매일 갱신</span> · 사진 Unsplash</p>
   </footer>
 </div>
@@ -289,7 +289,7 @@
     const box = document.getElementById('curve');
     box.replaceChildren();
     const data = D.curve || [];
-    if (!data.length || !window.d3) { box.append(el('div', 'empty', '그래프를 불러오지 못했습니다')); return; }
+    if (!data.length || !window.d3) { box.append(el('div', 'empty', '그래프 불러오기 실패 — 새로고침')); return; }
     const color = (k) => (k === 'FX' ? 'var(--gold)' : 'var(--coin)');
     const rows = data.map((r) => ({ day: new Date(r.day + 'T12:00:00Z'), market: r.market, v: +r.cum_pct }));
     const series = d3.groups(rows, (r) => r.market).map(([k, v]) => ({ k, v, color: color(k) }));
